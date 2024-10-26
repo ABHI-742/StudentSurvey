@@ -7,7 +7,7 @@ pipeline{
     stage('Build') {
       steps {
 	sh 'rm -rf *.var'
-        sh 'jar -cvf StudentSurvey.war .'     
+        sh 'jar cvf StudentSurvey.war .'     
         sh 'docker build -t abhi7422/student_survey:latest .'
       }
     }
@@ -21,10 +21,10 @@ pipeline{
         sh 'docker push abhi7422/student_survey:latest'
       }
     }
-        stage("deploying on k8")
+        stage("deploying on kubernets")
 	{
 		steps{
-			sh 'kubectl set image deployment/swe645hw2 container-0=abhi7422/student_survey:latest -n default'
+			sh 'kubectl set image swe645hw2 container-0=abhi7422/student_survey:latest -n default'
 			sh 'kubectl rollout restart deploy swe645hw2 -n default'
 		}
 	} 
