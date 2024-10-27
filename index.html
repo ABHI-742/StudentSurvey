@@ -11,19 +11,19 @@
     <style>
         /* General body styling */
         body {
-            background-color: #f4f4f9; /* Light grey background */
+            background-color: #f5f5f5; /* Light grey background */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         /* Styling for the main heading */
         h1 {
-            color: #005f99; /* Darker blue */
+            color: #FF6347; /* Tomato color for the main heading */
             font-weight: bold;
         }
 
         /* Custom border for the form container */
         .custom-border {
-            border: 4px solid #005f99; /* Dark blue border */
+            border: 4px solid #4682B4; /* Steel Blue border */
             box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
             border-radius: 12px;
@@ -32,45 +32,45 @@
 
         /* Style for form labels */
         label {
-            color: #005f99;
+            color: #4682B4; /* Steel Blue for labels */
             font-weight: bold;
         }
 
         /* Style for form fields */
         .form-control {
-            border: 2px solid #005f99;
+            border: 2px solid #4682B4;
             border-radius: 6px;
         }
 
         .form-control:focus {
-            border-color: #66b2ff;
+            border-color: #FF6347; /* Focus color: Tomato */
             box-shadow: none;
         }
 
         /* Styling buttons */
         .btn-primary {
-            background-color: #005f99;
-            border-color: #005f99;
+            background-color: #4682B4;
+            border-color: #4682B4;
         }
 
         .btn-primary:hover {
-            background-color: #3399ff;
-            border-color: #3399ff;
+            background-color: #FF6347; /* Hover: Tomato */
+            border-color: #FF6347;
         }
 
         .btn-danger {
-            background-color: #ff6666;
-            border-color: #ff6666;
+            background-color: #FF4500; /* Orange Red */
+            border-color: #FF4500;
         }
 
         .btn-danger:hover {
-            background-color: #ff9999;
-            border-color: #ff9999;
+            background-color: #FF6347; /* Hover: Tomato */
+            border-color: #FF6347;
         }
 
         /* Style for the form checkboxes and radio buttons */
         .form-check-label {
-            color: #005f99;
+            color: #4682B4;
         }
 
         /* Styling for the raffle help text */
@@ -82,17 +82,17 @@
         footer {
             margin-top: 20px;
             text-align: center;
-            color: #005f99;
+            color: #4682B4;
         }
 
         footer a {
             text-decoration: none;
-            color: #005f99;
+            color: #4682B4;
             font-weight: bold;
         }
 
         footer a:hover {
-            color: #3399ff;
+            color: #FF6347; /* Hover color for footer link */
         }
 
         /* Smooth scrolling for anchor link */
@@ -220,49 +220,35 @@
 
             <!-- likelihood -->
             <div class="form-group">
-                <label for="likely">How likely are you to recommend the university to a friend?</label>
-                <select class="form-control" id="likely" name="likely">
-                    <option value="very_likely">Very Likely</option>
-                    <option value="likely">Likely</option>
-                    <option value="unlikely">Unlikely</option>
+                <label for="likely">How likely are you to recommend us to a friend?</label>
+                <select id="likely" name="likely" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>Very Likely</option>
+                    <option>Likely</option>
+                    <option>Unlikely</option>
                 </select>
             </div>
 
-           <!-- raffle -->
-           <div class="form-group">
-               <label for="raffle">Raffle</label>
-               <input type="text" class="form-control" id="raffle" name="raffle"
-                placeholder="Enter at least ten comma-separated numbers from 1 to 100" required>
-               <small id="raffleHelp" class="form-text text-muted">Please enter at least 10 comma-separated numbers.</small>
-           </div>
-
-            <!-- comments -->
+            <!-- raffle -->
             <div class="form-group">
-                <label for="comments">Additional Comments</label>
-                <textarea class="form-control" id="comments" name="comments"></textarea>
+                <label for="raffle">Enter your name to win a raffle:</label>
+                <input type="text" class="form-control" id="raffle" name="raffle" placeholder="Enter to win a raffle">
+                <small id="raffleHelp" class="form-text text-muted">You could win a $50 gift card!</small>
             </div>
 
-            <!-- Submit and Cancel buttons -->
-            <div class="mt-3">
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="button" class="btn btn-danger" id="cancelButton">Cancel</button>
-            </div>
-
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-danger">Clear</button>
         </form>
     </div>
 
-    <!-- Footer with Go to Top link -->
+    <!-- Footer -->
     <footer>
-        <a href="#top">Go to Top</a> <!-- Link that jumps back to the top -->
+        <p>For any queries, visit our <a href="#top">survey information</a> page.</p>
     </footer>
-
-    <script>
-        // Clear form fields on Cancel button click
-        document.getElementById('cancelButton').addEventListener('click', function () {
-            document.getElementById('surveyForm').reset();
-        });
-    </script>
-
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-cHOr2FLzMxBIirKkUou1aqaC7imolAPo5qlRlj9SBkYZ+Tt/So/tAvkKkLQh4s29"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
