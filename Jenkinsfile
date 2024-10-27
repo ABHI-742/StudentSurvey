@@ -27,8 +27,8 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 // Update the deployment image and monitor the rollout
-                sh 'kubectl set image deployment/swe645hw2 container-0=abhi7422/student_survey:latest -n default'
-                sh 'kubectl rollout status deployment/swe645hw2 -n default'
+                sh 'kubectl set image deployment/swe645deploy container-0=abhi7422/student_survey:latest -n default'
+                sh 'kubectl rollout status deployment/swe645deploy -n default'
             }
         }
     }
